@@ -15,12 +15,23 @@ class TokenMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // Pre-Middleware Action
-
-        $response = $next($request);
-
-        // Post-Middleware Action
-
-        return $response;
+        $headers = $request->headers->all();
+        $token = env('x_api_key');
+        
+        if(!$token){
+            $response = $next($request);
+            return $response;    
+        }
+        
+        if(array_key_exists('x-api-key',$headers)){
+            if($token == $headers['x-api-key'][0]){
+                $response = $next($request);
+                return $response; 
+            } else{
+                return response()->json(['message' => 'Forbidden'], 403);
+            }
+        }else{
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
     }
 }
