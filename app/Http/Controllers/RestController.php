@@ -26,7 +26,7 @@ class RestController extends Controller
                 'position' => $key['position'],
                 'nation' => $key['nation']['name'],
                 'club' => $key['club']['name']
-            ]);
+            ]); 
         };
             
         for ($i=2; $i <= $val; $i++) { 

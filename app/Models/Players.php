@@ -9,4 +9,6 @@ class Players extends Model
     protected $fillable = [
         'firstName', 'lastName', 'position', 'nation','club','player_identifier'
     ];
+
+    //Agregar scoped query
 }

@@ -29,6 +29,6 @@ class CustomValidatorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        return 'hola';
+        
     }
 }

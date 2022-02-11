@@ -33,5 +33,6 @@ class TokenMiddleware
         }else{
             return response()->json(['message' => 'Unauthorized'], 401);
         }
+        //Crear un throw directo para el codigo de respuesta
     }
 }

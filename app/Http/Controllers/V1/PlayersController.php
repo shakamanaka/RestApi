@@ -15,12 +15,25 @@ class PlayersController extends Controller
             'order' => 'nullable|order'
         ]);
 
-        // $page = $field['page'] ?? 1;
-
         $order = $fields['order'] ?? 'asc';
         
         $users = Players::where('name', 'like', '%'.$fields['search'].'%')->orderBy('name', $order)->paginate(
-            $perPage = 10, $columns = ['nation','position', 'name', 'lastName', 'firstName']
+            $perPage = 10, $columns = ['nation','position', 'name', 'lastName', 'firstName','club']
+        );
+        
+        return $users;
+    }
+
+    public function Team(Request $request) {
+        $fields = $this->validate($request, [
+            'name' => 'required|string',
+            'page' => 'nullable|integer'
+        ]);
+
+        
+        
+        $users = Players::where('club', 'like', '%'.$fields['name'].'%')->paginate(
+            $perPage = 10, $columns = ['nation','position', 'name', 'lastName', 'firstName','club']
         );
         
         return $users;
