@@ -18,7 +18,7 @@ class CustomValidatorServiceProvider extends ServiceProvider
     {
         Validator::extend('order', function($attribute, $value, $parameters, $validator) {
             return in_array($value, $this->valid_array_rules);
-        });
+        },'The order must be asc or desc');
         
     }
 
@@ -29,6 +29,6 @@ class CustomValidatorServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        return 'hola';
     }
 }
