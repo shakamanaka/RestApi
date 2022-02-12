@@ -24,6 +24,14 @@ class PlayersController extends Controller
         return $users;
     }
 
+    public function AllPlayers() {
+        $users = Players::paginate(
+            $perPage = 10, $columns = ['nation','position', 'name', 'lastName', 'firstName','club']
+        );
+        
+        return $users;
+    }
+
     public function Team(Request $request) {
         $fields = $this->validate($request, [
             'name' => 'required|string',
