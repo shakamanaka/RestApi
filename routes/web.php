@@ -24,7 +24,6 @@ $router->get('/', function () use ($router) {
 $router->group(['middleware' => 'Token','prefix' => '/api'], function () use ($router) {
     $router->group(['prefix' => '/v1'], function () use ($router) {
         $router->get('/players', 'V1\PlayersController@Players');
-        $router->get('/allplayers', 'V1\PlayersController@AllPlayers');
         $router->post('/team', 'V1\PlayersController@Team');
     });
 });

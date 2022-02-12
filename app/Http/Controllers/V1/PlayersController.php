@@ -10,14 +10,16 @@ class PlayersController extends Controller
 {
     public function Players(Request $request) {
         $fields = $this->validate($request, [
-            'search' => 'required|string',
+            'search' => 'nullable|string',
             'page' => 'nullable|integer',
             'order' => 'nullable|order'
         ]);
 
+        $name = $fields['search'] ?? '';
+
         $order = $fields['order'] ?? 'asc';
         
-        $users = Players::where('name', 'like', '%'.$fields['search'].'%')->orderBy('name', $order)->paginate(
+        $users = Players::where('name', 'like', '%'.$name.'%')->orderBy('name', $order)->paginate(
             $perPage = 10, $columns = ['nation','position', 'name', 'lastName', 'firstName','club']
         );
         
