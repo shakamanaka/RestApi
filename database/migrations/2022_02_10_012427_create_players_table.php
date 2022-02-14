@@ -19,6 +19,15 @@ class CreatePlayersTable extends Migration
             $table->string('lastName', 20);
             $table->string('name', 40);
             $table->string('position', 5);
+            $table->string('positionFull', 30);
+            $table->integer('rating');
+            $table->integer('id_api');
+            $table->integer('stat_pac');
+            $table->integer('stat_sho');
+            $table->integer('stat_pas');
+            $table->integer('stat_dri');
+            $table->integer('stat_def');
+            $table->integer('stat_phy');
             $table->string('nation', 30);
             $table->string('club', 30);
             // $table->integer('player_identifier')->unique();

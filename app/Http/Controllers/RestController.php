@@ -24,8 +24,17 @@ class RestController extends Controller
                 'lastName' => $key['lastName'],
                 'name' => $key['name'],
                 'position' => $key['position'],
+                'positionFull' => $key['positionFull'],
+                'rating' => $key['rating'],
                 'nation' => $key['nation']['name'],
-                'club' => $key['club']['name']
+                'club' => $key['club']['name'],
+                'id_api' => $key['id'],
+                'stat_pac' => $key['attributes'][0]['value'],
+                'stat_sho' => $key['attributes'][1]['value'],
+                'stat_pas' => $key['attributes'][2]['value'],
+                'stat_dri' => $key['attributes'][3]['value'],
+                'stat_def' => $key['attributes'][4]['value'],
+                'stat_phy' => $key['attributes'][5]['value']
             ]); 
         };
             
@@ -39,8 +48,17 @@ class RestController extends Controller
                     'lastName' => $key['lastName'],
                     'name' => $key['name'],
                     'position' => $key['position'],
+                    'positionFull' => $key['positionFull'],
+                    'rating' => $key['rating'],
                     'nation' => $key['nation']['name'],
-                    'club' => $key['club']['name']
+                    'club' => $key['club']['name'],
+                    'id_api' => $key['id'],
+                    'stat_pac' => $key['attributes'][0]['value'],
+                    'stat_sho' => $key['attributes'][1]['value'],
+                    'stat_pas' => $key['attributes'][2]['value'],
+                    'stat_dri' => $key['attributes'][3]['value'],
+                    'stat_def' => $key['attributes'][4]['value'],
+                    'stat_phy' => $key['attributes'][5]['value']
                 ]);
             };
         }        
