@@ -1,3 +1,18 @@
+## Greetings
+
+Hi This is Camilo, to use this project please clone it and create a .env file, you can copy the .env.example file
+
+Then put in your .env file a x_api_key
+
+The x_api_key is the key that your application will use to prevent people to access without it
+
+The default frontend for this project is in this repo: https://github.com/shakamanaka/football.
+
+Hope you enjoy it!
+
+
+
+
 # Lumen PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
