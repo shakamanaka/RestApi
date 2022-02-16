@@ -44,13 +44,13 @@ class PlayersController extends Controller
 
     public function Team(Request $request) {
         $fields = $this->validate($request, [
-            'name' => 'required|string',
+            'name' => 'nullable|string',
             'page' => 'nullable|integer'
         ]);
 
+        $name = $fields['name'] ?? '';
         
-        
-        $users = Players::where('club', 'like', '%'.$fields['name'].'%')->paginate(
+        $users = Players::where('club', 'like', '%'.$name.'%')->paginate(
             $perPage = 10, $columns = [
                 'firstName',
                 'lastName',
