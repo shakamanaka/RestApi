@@ -62,7 +62,11 @@ class RestController extends Controller
                 ]);
             };
         }        
-        Players::insertOrIgnore($rows);
+        $chunks = array_chunk($rows, 200);
+
+        foreach ($chunks as $chunk) {
+            Players::insertOrIgnore($chunk);
+        }
         
     }
 
