@@ -6,6 +6,10 @@ Then put in your .env file a x_api_key
 
 The x_api_key is the key that your application will use to prevent people to access without it
 
+Then modify the database info and set your database credentials
+
+Then in console run php artisan migrate:fresh --seed, to set the default data for your database
+
 The default frontend for this project is in this repo: https://github.com/shakamanaka/football.
 
 Hope you enjoy it!
